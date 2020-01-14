@@ -42,5 +42,12 @@ class EmailModule:
         vals = [self.send_email(**em) for em in emails]
         return vals
     
+    def format_emails(self,template,values):
+        # values is a list of dictionaries for the values to put in 
+        # the template and the email.
+        for val in values:
+            val["body"] = template.format(**val)
+
+       return self.send_emails(values)
     def quit(self):
         self.session.quit()
