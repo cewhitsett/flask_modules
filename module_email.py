@@ -5,6 +5,11 @@ import smtplib
 from config import email, password
 
 
+"""
+    An email and password will be needed for this to work.
+    If one use's a Gmail account, they will need to allow
+    less secure apps.
+"""
 class EmailModule:
 
     def __init__(self,_email="",_password=""):
